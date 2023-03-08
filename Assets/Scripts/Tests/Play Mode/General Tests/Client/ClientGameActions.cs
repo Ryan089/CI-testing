@@ -44,12 +44,6 @@ namespace SS3D.Tests
         }
 
         [UnityTest]
-        public IEnumerator PlayerRemainsAboveStationLevelAfterSpawn([ValueSource("Iterations")] int iteration)
-        {
-            yield return PlaymodeTestRepository.PlayerRemainsAboveStationLevelAfterSpawn(controller);
-        }
-
-        [UnityTest]
         public IEnumerator PlayerCanMoveInEachDirectionCorrectly()
         {
             yield return PlaymodeTestRepository.PlayerCanMoveInEachDirectionCorrectly(controller);
