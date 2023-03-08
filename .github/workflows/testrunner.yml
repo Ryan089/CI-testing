@@ -17,13 +17,6 @@ jobs:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
         with:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
-      - name: Notify discord if tests fail
-        uses: rjstone/discord-webhook-notify@v1
-        if: failure()
-        with:
-          severity: error
-          details: Test runner failed!
-          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
       - name: Upload test results
         uses: actions/upload-artifact@v2
         if: always()
