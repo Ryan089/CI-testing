@@ -4,7 +4,7 @@ on: [push, workflow_dispatch]
 jobs:
   run_tests:
     name: Run Playmode Tests
-    runs-on: windows-2019
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout project code
         uses: actions/checkout@v2
