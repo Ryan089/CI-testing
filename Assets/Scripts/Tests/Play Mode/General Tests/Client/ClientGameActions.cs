@@ -51,8 +51,8 @@ namespace SS3D.Tests
             //yield return PlaymodeTestRepository.PlayerCanMoveInEachDirectionCorrectly(controller);
 
             string batPath = Application.dataPath;
-            batPath = batPath.Substring(0, batPath.Length - 6);     // Needed to remove the "Assets" folder.
-            batPath += "Builds";
+            batPath = batPath.Substring(0, batPath.Length - 7);     // Needed to remove the "Assets" folder.
+            //batPath += "Builds";
             string[] allFiles = Directory.GetFiles(batPath);
             StringBuilder sb = new StringBuilder();
             sb.Append($"List of all files in {batPath}\n");
@@ -60,6 +60,13 @@ namespace SS3D.Tests
             {
                 sb.Append($"{file}\n");
             }
+            string[] allDirectories = Directory.GetDirectories(batPath);
+            sb.Append($"List of all directories in {batPath}\n");
+            foreach (string file in allDirectories)
+            {
+                sb.Append($"{file}\n");
+            }
+
             Assert.IsTrue(false, sb.ToString());
 
             yield return null;
