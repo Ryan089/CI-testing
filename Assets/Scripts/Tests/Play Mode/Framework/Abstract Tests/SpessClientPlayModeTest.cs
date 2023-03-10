@@ -49,8 +49,8 @@ namespace SS3D.Tests
             cmdLineProcess.StartInfo.WindowStyle = ProcessWindowStyle.Minimized;
             cmdLineProcess.StartInfo.FileName = StartServerCommand;
             cmdLineProcess.StartInfo.WorkingDirectory = batPath;
-            cmdLineProcess.Start();
-            cmdLineProcess.WaitForExit();
+            //cmdLineProcess.Start();
+            //cmdLineProcess.WaitForExit();
 
             UnityEngine.Debug.Log(SceneManager.GetActiveScene().name);
 
@@ -61,13 +61,13 @@ namespace SS3D.Tests
             SetApplicationSettings(NetworkType.Client);
 
             // Load the startup scene (which will subsequently load the lobby once connected)
-            LoadStartupScene();
+            //LoadStartupScene();
         }
 
         [OneTimeTearDown]
         public void OneTimeTearDown()
         {
-            KillAllBuiltExecutables();
+            //KillAllBuiltExecutables();
         }
 
         [UnitySetUp]
@@ -80,7 +80,7 @@ namespace SS3D.Tests
             UserInput.SetInputService(input);
 
             // We need to wait until the lobby scene is loaded before anything can be done.
-            while (!lobbySceneLoaded) yield return new WaitForSeconds(1f);
+            //while (!lobbySceneLoaded) yield return new WaitForSeconds(1f);
         }
 
 

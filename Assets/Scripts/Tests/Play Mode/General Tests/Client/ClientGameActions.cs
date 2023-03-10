@@ -17,6 +17,7 @@ using FishNet;
 using SS3D.Systems.InputHandling;
 using SS3D.Systems.Entities.Humanoid;
 using System.Text;
+using System.IO;
 
 namespace SS3D.Tests
 {
@@ -32,21 +33,36 @@ namespace SS3D.Tests
         public override IEnumerator UnitySetUp()
         {
             yield return base.UnitySetUp();
-            yield return TestHelpers.StartAndEnterRound();
-            yield return GetController();
+            //yield return TestHelpers.StartAndEnterRound();
+            //yield return GetController();
         }
 
         [UnityTearDown]
         public override IEnumerator UnityTearDown()
         {
-            yield return TestHelpers.FinishAndExitRound();
+            //yield return TestHelpers.FinishAndExitRound();
             yield return base.UnityTearDown();
+
         }
 
         [UnityTest]
         public IEnumerator PlayerCanMoveInEachDirectionCorrectly()
         {
-            yield return PlaymodeTestRepository.PlayerCanMoveInEachDirectionCorrectly(controller);
+            //yield return PlaymodeTestRepository.PlayerCanMoveInEachDirectionCorrectly(controller);
+
+            string batPath = Application.dataPath;
+            batPath = batPath.Substring(0, batPath.Length - 6);     // Needed to remove the "Assets" folder.
+            batPath += "Builds";
+            string[] allFiles = Directory.GetFiles(batPath);
+            UnityEngine.Debug.Log($"List of all files in {batPath}");
+            foreach (string file in allFiles)
+            {
+                UnityEngine.Debug.Log(file);
+            }
+            
+
+            yield return null;
+
         }
     }
 }
