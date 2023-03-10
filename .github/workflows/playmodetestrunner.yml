@@ -20,7 +20,7 @@ jobs:
         with:
           buildName: SS3D
           targetPlatform: StandaloneWindows
-          buildsPath: TestBuilds
+          buildsPath: Builds
       - name: Run tests
         uses: game-ci/unity-test-runner@v2
         env:
