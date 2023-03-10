@@ -54,12 +54,13 @@ namespace SS3D.Tests
             batPath = batPath.Substring(0, batPath.Length - 6);     // Needed to remove the "Assets" folder.
             batPath += "Builds";
             string[] allFiles = Directory.GetFiles(batPath);
-            UnityEngine.Debug.Log($"List of all files in {batPath}");
+            StringBuilder sb = new StringBuilder();
+            sb.Append($"List of all files in {batPath}\n");
             foreach (string file in allFiles)
             {
-                UnityEngine.Debug.Log(file);
+                sb.Append($"{file}\n");
             }
-            
+            Assert.IsTrue(false, sb.ToString());
 
             yield return null;
 
