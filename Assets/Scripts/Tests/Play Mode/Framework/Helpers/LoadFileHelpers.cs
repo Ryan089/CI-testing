@@ -57,7 +57,7 @@ namespace SS3D.Tests
             process.StartInfo.WorkingDirectory = GetFilePath();
 
             // Execute the process
-            //process.Start();
+            process.Start();
 
             // Enforce a delay if we are loading a server (either dedicated or host).
             // This prevents us loading our client scene before server is ready to handle us.

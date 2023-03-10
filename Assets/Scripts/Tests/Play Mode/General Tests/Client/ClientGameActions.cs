@@ -53,6 +53,13 @@ namespace SS3D.Tests
             string batPath = Application.dataPath;
             batPath = batPath.Substring(0, batPath.Length - 6);     // Needed to remove the "Assets" folder.
             batPath += "Builds";
+
+
+            #if UNITY_STANDALONE_LINUX
+            // Automated tests run on Ubuntu, and create the files in StandaloneWindows directory.
+            batPath += "/StandaloneWindows";
+            #endif
+
             string[] allFiles = Directory.GetFiles(batPath);
             StringBuilder sb = new StringBuilder();
             sb.Append($"List of all files in {batPath}\n");

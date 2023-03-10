@@ -43,6 +43,7 @@ namespace SS3D.Tests
             string batPath = Application.dataPath;
             batPath = batPath.Substring(0, batPath.Length - 6);     // Needed to remove the "Assets" folder.
             batPath += "Builds";                                    // Needed to add the "Builds" folder.
+            batPath += "/x";
 
             // Fire up the server.
             cmdLineProcess = new Process();
